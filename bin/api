@@ -2,6 +2,5 @@
 'use strict';
 
 const api  = require('../lib/api');
-api();
 
-// todo: listen for signals
+api();

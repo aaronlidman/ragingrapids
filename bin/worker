@@ -4,4 +4,3 @@
 const worker = require('../lib/worker');
 
 worker.init()
-// todo: listen for signals
