@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+'use strict';
+
+const queue = require('../lib/queue');
+const pollInterval = 100;
+let currentMessage;
+
+// todo: proper logs
+
+console.log('worker online');
+console.log('pollInterval:', pollInterval);
+
+queue.create()
+    .then(getMessage)
+    .catch(console.error);
+
+function getMessage() {
+    return queue.dequeue()
+        .then(message => {
+            if (message) return doWork(message);
+            setTimeout(getMessage, pollInterval);
+        });
+}
+
+function checkInLog() {
+    // todo: log every x seconds anyway to indicate life
+}
+
+function doWork(message) {
+    console.log('got message', message);
+    setTimeout(() => {
+        console.log('done, back to polling');
+        getMessage();
+    }, pollInterval * 20);
+}
