@@ -6,4 +6,4 @@ WORKDIR /usr/local/app
 
 RUN npm install --production --no-optional
 
-CMD ["/usr/local/app/bin/server"]
+CMD ["/usr/local/app/bin/api"]

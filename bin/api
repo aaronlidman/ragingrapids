@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-const server  = require('../lib/server');
-server();
+const api  = require('../lib/api');
+api();
 
 // todo: listen for signals

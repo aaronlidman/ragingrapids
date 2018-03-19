@@ -12,10 +12,10 @@ services:
         - RedisHost=redis
       depends_on:
         - redis
-    server:
+    api:
       build:
         context: .
-        dockerfile: server.Dockerfile
+        dockerfile: api.Dockerfile
       environment:
         - RedisHost=redis
       ports:
