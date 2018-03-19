@@ -3,10 +3,20 @@ services:
     redis:
       image: redis:4-alpine
       ports:
-        - 6379:6379
+        - "6379:6379"
     worker:
       build:
         context: .
         dockerfile: worker.Dockerfile
+      environment:
+        - RedisHost=redis
       depends_on:
         - redis
+    server:
+      build:
+        context: .
+        dockerfile: server.Dockerfile
+      environment:
+        - RedisHost=redis
+      ports:
+        - "20008:20008"
