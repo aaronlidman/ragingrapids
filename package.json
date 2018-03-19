@@ -1,0 +1,17 @@
+{
+  "name": "wikiracer",
+  "version": "0.0.0",
+  "description": "Finding the fastest path from one article to another",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Aaron Lidman",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "redis": "^2.8.0",
+    "rsmq": "^0.8.3"
+  },
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
+}
