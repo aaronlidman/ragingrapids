@@ -3,4 +3,4 @@
 
 const worker = require('../lib/worker');
 
-worker.init()
+worker.start()
