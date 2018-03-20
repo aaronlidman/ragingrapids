@@ -3,4 +3,4 @@
 
 const api  = require('../lib/api');
 
-api();
+api.start();
