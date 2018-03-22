@@ -11,8 +11,7 @@
   "dependencies": {
     "fastlog": "^1.1.0",
     "redis": "^2.8.0",
-    "rsmq": "^0.8.3",
-    "ws": "^5.1.0"
+    "rsmq": "^0.8.3"
   },
   "devDependencies": {
     "tape": "^4.9.0"

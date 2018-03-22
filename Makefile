@@ -1,13 +1,8 @@
-all: build up
-
-build:
-	docker-compose build
+all: up
 
 up:
-	docker-compose up
+	bash -c "trap 'docker-compose down' EXIT; docker-compose up --build --scale worker=4"
 
-# for development, reset the queue
+# for development
 reset:
-	echo "del rsmq:fetch" | redis-cli
-	echo "del rsmq:QUEUES" | redis-clif
-	echo "del rsmq:fetch:Q" | redis-cli
+	echo 'flushdb' | redis-cli
