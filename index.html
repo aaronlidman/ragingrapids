@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>wikiracer</title>
+    <script>
+        function submitForm() {
+            const source = document.getElementById('source').value;
+            const destination = document.getElementById('destination').value;
+
+            if (source && destination) {
+                // throw up a spinner or something
+
+                fetch('http://localhost:20008/new', {
+                    method: 'post',
+                    body: JSON.stringify({
+                        source: source,
+                        destination: destination
+                    })
+                }).then(response => {
+                    console.log(response);
+                });
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); submitForm();" method="post">
+        <div>
+            <label for="source">Source:</label>
+            <input name="source" id="source" type="text">
+        </div>
+        <div>
+            <label for="destination">Destination:</label>
+            <input name="destination" id="destination" type="text">
+        </div>
+        <input type="submit" value="Race">
+    </form>
+</body>
+</html>
