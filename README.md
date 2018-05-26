@@ -1,5 +1,7 @@
 # ragingrapids
 
-Finding paths quickly from one wiki article to another. Goal is to paths quickly, not efficiently.
+Finding paths quickly from one wiki article to another. Goal is to paths quickly, not necessarily efficiently.
 
-This was something I built for an interview. It works well, the techniques are solid, but overbuilt if you're just looking to solve the problem. I wanted to showoff a bit so I build a docker application, that hosts an api, uses muliple worker process, and has a small frontend, and caches results to quicker subsequent queries. Fun project.
+This was something I built for an interview. Ended up not needing it, but it was fun anyway.
+
+The techniques are solid, but it's overbuilt if you're just looking to solve the problem. I wanted to showoff a bit so I fleshed it out. It's a docker application that serves an api, uses a redis queue, uses muliple worker processes, caches results to quicker subsequent queries, and has a small frontend.
